@@ -6,7 +6,9 @@ const profPicEl = document.getElementById('profile-pic');
 const ratingBlock = document.getElementById('career-rating');
 
 //==============event listeners
-profPicEl.addEventListener('click', showSpecialties);
+if (window.innerWidth < window.innerHeight) { //adds if loaded into profile view
+    profPicEl.addEventListener('click', showSpecialties);
+}
 window.addEventListener('resize', toggleShowMore);
 
 //==============functions
@@ -33,7 +35,7 @@ function toggleShowMore(e) {
         ratingBlock.children[1].style.display = '';
         ratingBlock.children[2].style.display = 'flex';
     } else {
-        profPicEl.addEventListener('click', showSpecialties);  
+        profPicEl.addEventListener('click', showSpecialties);
         ratingBlock.children[0].style.display = '';
         ratingBlock.children[1].style.display = '';
         ratingBlock.children[2].style.display = 'none';
