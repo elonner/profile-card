@@ -7,7 +7,7 @@ const ratingBlock = document.getElementById('career-rating');
 
 //==============event listeners
 profPicEl.addEventListener('click', showSpecialties);
-window.addEventListener('resize', turnOffShowMore);
+window.addEventListener('resize', toggleShowMore);
 
 //==============functions
 function showSpecialties(e) {
@@ -18,20 +18,25 @@ function showSpecialties(e) {
         ratingBlock.children[2].style.display = 'initial';
         speShown = true;
     } else {
-        ratingBlock.children[0].style.display = 'initial';
-        ratingBlock.children[1].style.display = 'initial';
+        ratingBlock.children[0].style.display = '';
+        ratingBlock.children[1].style.display = '';
         ratingBlock.children[2].style.display = 'none';
         speShown = false;
     }
 }
 
-function turnOffShowMore(e) {
-    // if (window.innerWidth > window.innerHeight) {
-    //     console.log('same');
-    // }
+//add/remove event listener based on orientation
+function toggleShowMore(e) {
     if (window.innerWidth > window.innerHeight) {
-        ratingBlock.children[0].style.display = 'initial';
-        ratingBlock.children[1].style.display = 'initial';
+        profPicEl.removeEventListener('click', showSpecialties);
+        ratingBlock.children[0].style.display = '';
+        ratingBlock.children[1].style.display = '';
         ratingBlock.children[2].style.display = 'flex';
+    } else {
+        profPicEl.addEventListener('click', showSpecialties);  
+        ratingBlock.children[0].style.display = '';
+        ratingBlock.children[1].style.display = '';
+        ratingBlock.children[2].style.display = 'none';
+        speShown = false;
     }
 }

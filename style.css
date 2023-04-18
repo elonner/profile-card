@@ -19,13 +19,32 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     height: 90vh;
     width: 60vh;
     top: 5vh;
     box-shadow: 0 0 50vh -2vh #03263A;
 }
 
-#card>* {
+#right,
+#left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#left {
+    height: 35vh;
+}
+
+#right {
+    height: 40vh;
+}
+
+#right>*,
+#left>*,
+#contact {
     width: 60vh;
     text-align: center;
 }
@@ -33,21 +52,23 @@ body {
 #status {
     font-size: 2vh;
     text-align: right;
-    padding: 1.5vh 3vh 0 0;
+    margin: -1.5vh 5vh 0 0;
     color: #CDD9DF;
 }
 
 #profile-pic {
     width: 25vh;
     border-radius: 50%;
-    border: solid 0.5vmin #29F5E0;
+    border: solid 0.8vmin #29F5E0;
+    position: relative;
+    top: 3vh;
 }
 
 #profile-pic:hover {
     transition: 100ms ease-in;
     width: 30vh;
     margin: -2.5vh 0 -2.5vh 0;
-    border: solid 1vmin #29F5E0;
+    border: solid 1.2vmin #29F5E0;
     cursor: pointer;
 }
 
@@ -57,7 +78,7 @@ body {
 
 #name {
     font-size: 4vh;
-    margin: 3vh 0 3vh 0;
+    margin: 1vh 0 5vh 0;
 }
 
 #career-rating {
@@ -66,7 +87,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 43vh;
+    height: 18vh;
 }
 
 #career-rating>img {
@@ -90,7 +111,7 @@ body {
 }
 
 #pricing {
-    height: 40vh;
+    height: 15vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -139,6 +160,7 @@ body {
 }
 
 @media only screen and (max-height: 473px) {
+
     #email>div,
     #book>div {
         scale: 2;
@@ -160,46 +182,67 @@ body {
         margin: auto;
         height: 50vh;
         width: 90vh;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: left;
+        display: grid;
+        grid-template-columns: 38vh 52vh;
         top: 15vh;
         box-shadow: 0 0 50vh -2vh #03263A;
     }
-    
+
     #card>* {
         width: initial;
         text-align: initial;
     }
-    
+
+    #right,
+    #left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0;
+        height: 50vh;
+    }
+
+    #right {
+        align-items: left;
+        background-color: #e9f0f4;
+    }
+
+    #right>*,
+    #left>*,
+    #contact {
+        width: initial;
+        text-align: initial;
+    }
+
     #status {
         width: 38vh;
         font-size: 2vh;
-        align-self: left; 
-        padding-left: 2vh;
+        text-align: left;
+        margin: 1vh 0 0 5vh
     }
-    
+
     #profile-pic {
         width: 25vh;
         border-radius: 50%;
-        border: solid 0.5vmin #29F5E0;
-        margin: 5.76vh;
+        border: solid 1vmin #29F5E0;
+        top: -2vh;
     }
 
     #profile-pic:hover {
         transition: initial;
         width: 25vh;
         margin: 5.76vh;
-        border: solid 0.5vmin #29F5E0;
+        border: solid 1vmin #29F5E0;
         cursor: initial;
     }
 
     #contact-2 {
         display: flex;
         gap: 0.7vh;
+        width: 38vh;
+        ;
     }
-    
+
     #contact-2>* {
         display: flex;
         background-color: #29F5E0;
@@ -208,28 +251,27 @@ body {
         justify-content: center;
         align-items: center;
     }
-    
+
     #email-2>div,
     #book-2>div {
         scale: 2.2;
         color: #09c4b1;
     }
-    
+
     #email-2:hover #email-icon-2,
     #book-2:hover #book-icon-2 {
         transition: scale 50ms ease-in;
         scale: 2.6;
         color: #e9f0f4;
     }
-    
+
     #email-2:hover,
     #book-2:hover {
         cursor: pointer;
         background-color: #09c4b1;
     }
-    
+
     #name {
-        background-color: #e9f0f4;
         font-weight: bold;
         font-size: 8vh;
         width: 52vh;
@@ -237,15 +279,14 @@ body {
         margin: 0;
         padding: 5vh 0 0 3vh;
     }
-    
+
     #career-rating {
-        background-color: #e9f0f4;
         width: 52vh;
         height: initial;
         display: initial;
         align-items: left;
     }
-    
+
     #career-rating>img {
         mix-blend-mode: multiply;
         height: 10vh;
@@ -253,14 +294,14 @@ body {
         margin: -3vh 0 -3vh -1.2vh;
         padding-left: 3vh;
     }
-    
+
     #position {
         font-size: 4vh;
         font-weight: 200;
         margin: 0 0 4vh 0vh;
         padding-left: 3vh;
     }
-    
+
     #specialties {
         display: flex;
         font-size: 2.5vh;
@@ -270,9 +311,8 @@ body {
         padding: 0 0 0 2vh;
         margin: 5vh 0 5vh 3vh;
     }
-    
+
     #pricing {
-        background-color: #e9f0f4;
         width: 52vh;
         height: 9.5vh;
         display: flex;
@@ -281,19 +321,34 @@ body {
         justify-self: stretch;
         padding-left: 3vh;
     }
-    
+
     #pricing>h2 {
         font-size: 3.5vh;
     }
-    
+
     #pricing>p {
         font-size: 2.5vh;
         font-weight: 200;
         margin-left: 0.2vh;
     }
-    
+
     #contact {
         display: none;
     }
+
+    @media only screen and (max-height: 600px) {
+
+        #email-2>div,
+        #book-2>div {
+            scale: 2;
+            color: #09c4b1;
+        }
     
+        #email-2:hover #email-icon-2,
+        #book-2:hover #book-icon-2 {
+            transition: scale 50ms ease-in;
+            scale: 2.5;
+            color: #e9f0f4;
+        }
+    }
 }
