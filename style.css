@@ -1,0 +1,299 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #04334E;
+    margin: 0;
+}
+
+body {
+    background-color: #075988;
+    margin: 0;
+    width: 100vw;
+}
+
+#card {
+    background-color: white;
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    width: 60vh;
+    top: 5vh;
+    box-shadow: 0 0 50vh -2vh #03263A;
+}
+
+#card>* {
+    width: 60vh;
+    text-align: center;
+}
+
+#status {
+    font-size: 2vh;
+    text-align: right;
+    padding: 1.5vh 3vh 0 0;
+    color: #CDD9DF;
+}
+
+#profile-pic {
+    width: 25vh;
+    border-radius: 50%;
+    border: solid 0.5vmin #29F5E0;
+}
+
+#profile-pic:hover {
+    transition: 100ms ease-in;
+    width: 30vh;
+    margin: -2.5vh 0 -2.5vh 0;
+    border: solid 1vmin #29F5E0;
+    cursor: pointer;
+}
+
+#contact-2 {
+    display: none;
+}
+
+#name {
+    font-size: 4vh;
+    margin: 3vh 0 3vh 0;
+}
+
+#career-rating {
+    background-color: #e9f0f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 43vh;
+}
+
+#career-rating>img {
+    mix-blend-mode: multiply;
+    height: 13vh;
+    width: 35vh;
+    margin-bottom: -3vh;
+}
+
+#position {
+    font-size: 3vh;
+    font-weight: 200;
+    margin: 0 0 4vh 0;
+}
+
+#specialties {
+    font-size: 2.5vh;
+    font-weight: 200;
+    padding: 0 10vh;
+    display: none;
+}
+
+#pricing {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#pricing>h2 {
+    font-size: 3vh;
+}
+
+#pricing>p {
+    font-size: 2vh;
+    font-weight: 200;
+}
+
+#contact {
+    display: flex;
+    gap: 0.75vh;
+}
+
+#contact>* {
+    display: flex;
+    background-color: #29F5E0;
+    width: 30vh;
+    height: 15vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#email>div,
+#book>div {
+    scale: 3;
+    color: #09c4b1;
+}
+
+#email:hover #email-icon,
+#book:hover #book-icon {
+    transition: scale 50ms ease-in;
+    scale: 3.5;
+    color: #e9f0f4;
+}
+
+#email:hover,
+#book:hover {
+    cursor: pointer;
+    background-color: #09c4b1;
+}
+
+@media only screen and (max-height: 473px) {
+    #email>div,
+    #book>div {
+        scale: 2;
+        color: #09c4b1;
+    }
+
+    #email:hover #email-icon,
+    #book:hover #book-icon {
+        transition: scale 50ms ease-in;
+        scale: 2.5;
+        color: #e9f0f4;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    #card {
+        background-color: white;
+        position: relative;
+        margin: auto;
+        height: 50vh;
+        width: 90vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: left;
+        top: 15vh;
+        box-shadow: 0 0 50vh -2vh #03263A;
+    }
+    
+    #card>* {
+        width: initial;
+        text-align: initial;
+    }
+    
+    #status {
+        width: 38vh;
+        font-size: 2vh;
+        align-self: left; 
+        padding-left: 2vh;
+    }
+    
+    #profile-pic {
+        width: 25vh;
+        border-radius: 50%;
+        border: solid 0.5vmin #29F5E0;
+        margin: 5.76vh;
+    }
+
+    #profile-pic:hover {
+        transition: initial;
+        width: 25vh;
+        margin: 5.76vh;
+        border: solid 0.5vmin #29F5E0;
+        cursor: initial;
+    }
+
+    #contact-2 {
+        display: flex;
+        gap: 0.7vh;
+    }
+    
+    #contact-2>* {
+        display: flex;
+        background-color: #29F5E0;
+        width: 18.65vh;
+        height: 9.5vh;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #email-2>div,
+    #book-2>div {
+        scale: 2.2;
+        color: #09c4b1;
+    }
+    
+    #email-2:hover #email-icon-2,
+    #book-2:hover #book-icon-2 {
+        transition: scale 50ms ease-in;
+        scale: 2.6;
+        color: #e9f0f4;
+    }
+    
+    #email-2:hover,
+    #book-2:hover {
+        cursor: pointer;
+        background-color: #09c4b1;
+    }
+    
+    #name {
+        background-color: #e9f0f4;
+        font-weight: bold;
+        font-size: 8vh;
+        width: 52vh;
+        text-align: left;
+        margin: 0;
+        padding: 5vh 0 0 3vh;
+    }
+    
+    #career-rating {
+        background-color: #e9f0f4;
+        width: 52vh;
+        height: initial;
+        display: initial;
+        align-items: left;
+    }
+    
+    #career-rating>img {
+        mix-blend-mode: multiply;
+        height: 10vh;
+        width: 30vh;
+        margin: -3vh 0 -3vh -1.2vh;
+        padding-left: 3vh;
+    }
+    
+    #position {
+        font-size: 4vh;
+        font-weight: 200;
+        margin: 0 0 4vh 0vh;
+        padding-left: 3vh;
+    }
+    
+    #specialties {
+        display: flex;
+        font-size: 2.5vh;
+        font-weight: 200;
+        padding: 0;
+        border-left: solid 0.5vh #09c4b1;
+        padding: 0 0 0 2vh;
+        margin: 5vh 0 5vh 3vh;
+    }
+    
+    #pricing {
+        background-color: #e9f0f4;
+        width: 52vh;
+        height: 9.5vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-self: stretch;
+        padding-left: 3vh;
+    }
+    
+    #pricing>h2 {
+        font-size: 3.5vh;
+    }
+    
+    #pricing>p {
+        font-size: 2.5vh;
+        font-weight: 200;
+        margin-left: 0.2vh;
+    }
+    
+    #contact {
+        display: none;
+    }
+    
+}
